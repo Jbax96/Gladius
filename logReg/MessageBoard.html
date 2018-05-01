@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notice Board</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; }
+        form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 50%; }
+        form input {border: 0; padding: 10px; width: 90%; margin-right: .50%; }
+        form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+        #messages { list-style-type: none; margin: 0; padding: 50px; }
+        #messages li { padding: 50px 20px;
+                        display: block
+                     }
+
+        #messages li:nth-child(odd) { background: none; }
+        .navbar {
+            display: block;
+            list-style-type: none;
+            padding: 10px;
+            margin: 1%;
+            overflow: hidden;
+            background-color: rgba(190, 125, 39, 0.47);
+            border-bottom: 2px solid #8A0707;
+            border-top: 2px solid #8A0707;
+        }
+        .messages{
+            width: 100%;
+            padding: 1em 1em 1em 1em;
+            font-size: 1.5em;
+            margin: 1em 0;
+            outline: none;
+            color: #000000;
+            border-bottom: 2px solid #8A0707;
+            letter-spacing: 1px;
+            text-align:center;
+        }
+        li {
+            display: inline;
+        }
+        li a {
+            display: inline;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+    </style>
+    <!--Custom Theme files-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Register Login Widget template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login Signup Responsive web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="css/css.css" rel="stylesheet" type="text/css" media="all" />
+    <!--web-fonts-->
+    <link href='//fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+</head>
+<body>
+<div class="navbar">
+<ul>
+    <li><a href="Profile.html">Home</a></li>
+    <li><a href="Ludus.html">Ludus</a></li>
+    <li><a href="Arena.html">Arena</a></li>
+    <li><a class ="active"href="MessageBoard.html">Notice Board</a></li>
+    <li><a href="Are.html">Sea</a></li>
+    <li><a href="/logout">LogOut</a></li>
+</ul>
+</div>
+<div class ="messages">
+<ul id="messages"></ul>
+</div>
+<form action="">
+    <input id="m" autocomplete="off" /><button>Send</button>
+</form>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        var socket = io();
+        $('form').submit(function(req){
+            socket.emit('chat message', $('#m').val());
+            $('#m').val('');
+            return false;
+        });
+        socket.on('chat message', function(msg){
+            $('#messages').append($('<li>').text(msg));
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+    });
+</script>
+</body>
+</html>

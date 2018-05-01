@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arena</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; }
+        .navbar {
+            display: block;
+            list-style-type: none;
+            padding: 10px;
+            margin: 1%;
+            overflow: hidden;
+            background-color: rgba(190, 125, 39, 0.47);
+            border-bottom: 2px solid #8A0707;
+            border-top: 2px solid #8A0707;
+        }
+        li {
+            display: inline;
+        }
+        li a {
+            display: inline;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+        canvas{
+            position: center;
+            width: 900px;
+            height: 600px;
+            border: 5px solid #4F4D3F;
+            background-color: wheat ;
+        }
+
+    </style>
+    <!--Custom Theme files-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Register Login Widget template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login Signup Responsive web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="css/css.css" rel="stylesheet" type="text/css" media="all" />
+    <!--web-fonts-->
+    <link href='//fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<div class="navbar">
+    <ul>
+        <li><a href="Profile.html">Home</a></li>
+        <li><a href="Ludus.html">Ludus</a></li>
+        <li><a class ="active"href="Arena.html">Arena</a></li>
+        <li><a href="MessageBoard.html">Notice Board</a></li>
+        <li><a href="Are.html">Sea</a></li>
+        <li><a href="/logout">LogOut</a></li>
+    </ul>
+</div>
+
+</body>
+<div class="form">
+    <h2>Easy Arena</h2>
+    <p>Send gladiator into an easy fight for a price of 10 gold</p>
+    <form action ="/FightEasy" method ="post">
+        <input type="text" name="userName" placeholder="Username" required="">
+        <input type="text" name="gladiatorName" placeholder="Gladiator Name" required="">
+        <input type ="submit" value ="FIGHT!">
+    </form>
+</div>
+<div class="form">
+    <h2>Normal Fight</h2>
+    <p>Send gladiator into a standard fight for a price of 100 gold</p>
+    <form action ="/FightMedium" method ="post">
+        <input type="text" name="userName" placeholder="Username" required="">
+        <input type="text" name="gladiatorName" placeholder="Gladiator Name" required="">
+        <input type ="submit" value ="FIGHT!">
+    </form>
+</div>
+
+<div class="form">
+    <h2>Difficult Arena</h2>
+    <p>Send gladiator into a difficult fight for the price of 500 gold</p>
+    <form action ="/FightHard" method ="post">
+        <input type="text" name="userName" placeholder="Username" required="">
+        <input type="text" name="gladiatorName" placeholder="Gladiator Name" required="">
+        <input type ="submit" value ="FIGHT!">
+    </form>
+</div>
+
+<div class="form">
+    <h2>Fight other player's gladiators</h2>
+    <p>Send gladiator into a multiplayer fight for a price of 1000 gold</p>
+    <form action ="/FightMulti" method ="post">
+        <input type="text" name="userName" placeholder="Username" required="">
+        <input type="text" name="userGladiator" placeholder="Your gladiator's name" required="">
+        <input type="text" name="oppGladiator" placeholder="Your opponent's gladiator" required="">
+        <input type ="submit" value ="FIGHT!">
+    </form>
+</div>
+<div class="form">
+    <h2>Available Gladiators</h2>
+    <p>Get your Gladiators</p>
+    <form action ="/ArenaUser" method ="post">
+        <input type="text" name="userName" placeholder="Username" required="">
+        <input type ="submit" value ="Roster">
+    </form>
+</div>
+<div class="form">
+    <h2>Available Gladiators</h2>
+    <p>Get all Gladiators</p>
+    <form action ="/ArenaAll" method ="post">
+        <input type ="submit" value ="Full Roster">
+    </form>
+</div>
+</html>

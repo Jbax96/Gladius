@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ludus</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; }
+        .navbar {
+            display: block;
+            list-style-type: none;
+            padding: 10px;
+            margin: 1%;
+            overflow: hidden;
+            background-color: rgba(190, 125, 39, 0.47);
+            border-bottom: 2px solid #8A0707;
+            border-top: 2px solid #8A0707;
+        }
+        li {
+            display: inline;
+        }
+        li a {
+            display: inline;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+    </style>
+    <!--Custom Theme files-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Register Login Widget template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login Signup Responsive web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="css/css.css" rel="stylesheet" type="text/css" media="all" />
+    <!--web-fonts-->
+    <link href='//fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+</head>
+<body>
+<div class="navbar">
+    <ul>
+        <li><a href="Profile.html">Home</a></li>
+        <li><a class ="active" href="Ludus.html">Ludus</a></li>
+        <li><a href="Arena.html">Arena</a></li>
+        <li><a href="MessageBoard.html">Notice Board</a></li>
+        <li><a href="Are.html">Sea</a></li>
+        <li><a href="/logout">LogOut</a></li>
+    </ul>
+</div>
+<div class="agile">
+        <div class="form">
+            <h2>Stats must be less than your current funds</h2>
+            <p>Check your funds using the below button</p>
+            <form action="/Ludus" method="post">
+                <input type="text" name="name" placeholder="Gladiator Name" required="">
+                <input type="number" name="strength" placeholder="Strength:" required="">
+                <input type="number" name="agility" placeholder="Agility:" required="">
+                <input type="number" name="stamina" placeholder="Stamina" required="">
+                <input type="text" name="userName" placeholder="Username" required="">
+                <input type="submit" value="CREATE">
+            </form>
+        </div>
+
+        <div class="form">
+            <p>Upgrade Gladiators</p>
+            <form action ="/Upgrade" method ="post">
+                <input type="text" name="existingName" placeholder="Gladiator Name" required="">
+                <input type="number" name="newStrength" placeholder="Strength:" required="">
+                <input type="number" name="newAgility" placeholder="Agility:" required="">
+                <input type="number" name="newStamina" placeholder="Stamina" required="">
+                <input type="text" name="existingUserName" placeholder="Username" required="">
+                <input type ="submit" value ="UPGRADE">
+            </form>
+        </div>
+
+    <div class="form">
+        <p>Get current Gladiators</p>
+        <form action ="/ArenaUser" method ="post">
+            <input type ="text" name ="userName" placeholder="Username" required="">
+            <input type ="submit" value ="Roster">
+        </form>
+    </div>
+
+        <div class="form">
+            <p>Get Available Funds</p>
+            <form action ="/funds" method ="post">
+                <input type ="text" name ="username" placeholder="Username" required="">
+                <input type ="submit" value ="Get Funds">
+            </form>
+        </div>
+</div>
+</body>
+</html>
